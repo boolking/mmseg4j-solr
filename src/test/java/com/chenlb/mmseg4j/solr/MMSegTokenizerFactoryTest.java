@@ -4,13 +4,13 @@ import java.io.FileInputStream;
 import java.io.IOException;
 import java.util.List;
 
-import junit.framework.Assert;
+import org.junit.Assert;
 
 import org.apache.lucene.analysis.Analyzer;
 import org.apache.lucene.analysis.util.TokenizerFactory;
+import org.apache.solr.SolrTestCaseJ4;
 import org.apache.solr.analysis.TokenizerChain;
 import org.apache.solr.schema.FieldType;
-import org.apache.solr.util.AbstractSolrTestCase;
 import org.junit.BeforeClass;
 import org.junit.Test;
 import org.slf4j.Logger;
@@ -24,7 +24,7 @@ import com.chenlb.mmseg4j.Seg;
 import com.chenlb.mmseg4j.SimpleSeg;
 import com.chenlb.mmseg4j.analysis.AnalyzerTest;
 
-public class MMSegTokenizerFactoryTest extends AbstractSolrTestCase {
+public class MMSegTokenizerFactoryTest extends SolrTestCaseJ4 {
 
 	private static final Logger logger = LoggerFactory.getLogger(MMSegTokenizerFactoryTest.class);
 

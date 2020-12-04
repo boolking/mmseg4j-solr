@@ -52,13 +52,14 @@
   <indexConfig>
     <mergeScheduler class="org.apache.lucene.index.ConcurrentMergeScheduler"/>
     <writeLockTimeout>1000</writeLockTimeout>
-    <mergeFactor>8</mergeFactor>
 
     <!-- for better multi-segment testing, we are using slower
     indexing properties of maxBufferedDocs=10 and LogDocMergePolicy.
     -->
     <maxBufferedDocs>10</maxBufferedDocs>
-    <mergePolicy class="org.apache.lucene.index.LogDocMergePolicy"/>
+    <mergePolicyFactory class="org.apache.solr.index.LogDocMergePolicyFactory">
+      <int name="mergeFactor">8</int>
+    </mergePolicyFactory>
     <lockType>native</lockType>
   </indexConfig>
 
